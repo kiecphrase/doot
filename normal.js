@@ -1,11 +1,29 @@
 let doots = ["test1", "test2", "test3"];
 
+function actualmake(theitem){
+    let newnew = document.createElement("p");
+    y.setAttribute("class", "nameitem");
+    y.setAttribute("id", arbid());
+    y.setAttribute("ondblclick", "deldel(this.id)");
+    y.textContent = theitem;
+    document.getElementById("itemsholder").appendChild(y);
+}
+
+function getcurrentitems(){
+    let cur = document.getElementById("itemsholder");
+    let allcur = [];
+
+    //TODO
+
+    return allcur;
+}
+
 function updatelocaladd(doots){
-    // todo
+    //TODO
 }
 
 function updatelocalremove(doots){
-    // todo
+    //TODO
 }
 
 function deldel(the_id){
@@ -49,10 +67,6 @@ function gofish(idid, doots){
     let currenttemp = document.getElementById(idid);
     let currentvalue = currenttemp.getAttribute("value");
 
-    let y = document.createElement("p");
-    y.setAttribute("class", "nameitem");
-    y.setAttribute("id", arbid());
-    y.setAttribute("ondblclick", "deldel(this.id)");
-    y.textContent = currentvalue;
-    document.getElementById("itemsholder").appendChild(y);
+    actualmake(currentvalue);
+
 }
