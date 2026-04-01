@@ -13,17 +13,17 @@ function getcurrentitems(){
     let cur = document.getElementById("itemsholder");
     let allcur = [];
 
-    //TODO
+    //TODO get all current items
 
-    return allcur;
+    // Local Storage
+    doots = allcur.toString();
+    localStorage.setItem('doots', doots);
 }
 
-function updatelocaladd(doots){
-    //TODO
-}
+function initializin(){
+    let ttttt = localStorage.getItem('doots');
 
-function updatelocalremove(doots){
-    //TODO
+    // TODO take all things from doots, convert it to an array, make the items
 }
 
 function deldel(the_id){
