@@ -14,20 +14,39 @@ function getcurrentitems(){
     let allcur = [];
 
     //TODO get all current items
+    for(c in cur){
+        allcur.push(c.textContent);
+    }
 
     // Local Storage
     doots = allcur.toString();
-    localStorage.setItem('doots', doots);
+    localStorage.setItem("doots", doots);
 }
 
 function initializin(){
-    let ttttt = localStorage.getItem('doots');
+    
+    //determine if doots or not doots
+    if (localStorage.getItem("doots")){
+        let ttttt = localStorage.getItem("doots");
+    }
+    else {
+        let thisistemp = ["test1", "test2", "test3"];
+        localStorage.setItem("doots", thisistemp.toString())
+        let ttttt = localStorage.getItem("doots");
+    }
 
-    // TODO take all things from doots, convert it to an array, make the items
+    //take all things from doots, convert it to an array, make the items
+    let arrarar = ttttt.split(",");
+    for (o = 0; o < arrarar.length; o++){
+        actualmake(arrarar[o]);
+    }
+
+    return null;
 }
 
 function deldel(the_id){
     document.getElementById(the_id).remove();
+    getcurrentitems();
 }
 
 function arbid(){
